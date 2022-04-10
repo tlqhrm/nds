@@ -583,7 +583,7 @@
 
     var saveStateToServer = function(screenshot, state) {
         var formdata = new FormData();
-        formdata.append("id", '20108');
+        formdata.append("id", '999999');
         formdata.append("screen", new Blob([screenshot], {type:"application/octet-stream"}));
         formdata.append("state_file", new Blob([state], {type:"application/octet-stream"}));
         formdata.append("old", 0);
