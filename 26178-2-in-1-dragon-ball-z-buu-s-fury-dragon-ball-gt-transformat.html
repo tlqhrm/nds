@@ -487,15 +487,15 @@
     });
 
             EJS_player = '#game';
-    EJS_gameUrl = 'https://raw.githack.com/tlqhrm/nds/main/%ED%8F%AC%EC%BC%93%20%EB%AA%AC%EC%8A%A4%ED%84%B0%20%EB%A3%A8%EB%B9%84(K).gba';
-    EJS_gameID = 999123;
+    EJS_gameUrl = 'https://filesus3.retrogames.cc/MndKa1o1WG9iQlpqRlpGcENaVnBacFppWm1ocUVKUFRrOVhaMXE4L0pzWnYyTHNsNzM5dVUwQ1RrSWh1VjJtOU1XY3pObG00YjVRPQ%3D%3D/26178_2-in-1-dragon-ball-z-buu-s-fury-dragon-ball-gt-transformation-u-independent.zip';
+    EJS_gameID = 26178;
     EJS_core = 'gba';
 
     EJS_playerName = '김지훈';
 
     EJS_onGameStart = function() {
         console.log('start');
-        $.post('https://www.retrogames.cc/ajax/start-game', {id:EJS_gameID, rid:0}, function(ret) {});
+        $.post('/ajax/start-game', {id:EJS_gameID, rid:0}, function(ret) {});
 
         if ($('.ejs--7a5f920ceffb2913f6dbda780573cf').length) {
             $('.reveal-overlay, .reveal.without-overlay').appendTo($('.ejs--7a5f920ceffb2913f6dbda780573cf'));
@@ -583,7 +583,7 @@
 
     var saveStateToServer = function(screenshot, state) {
         var formdata = new FormData();
-        formdata.append("id", '999999');
+        formdata.append("id", '20108');
         formdata.append("screen", new Blob([screenshot], {type:"application/octet-stream"}));
         formdata.append("state_file", new Blob([state], {type:"application/octet-stream"}));
         formdata.append("old", 0);
@@ -685,6 +685,7 @@
 
 
     EJS_onSaveState = function(data) {
+        alert("오잉");
         if (saving) {
             return false;
         }
@@ -788,7 +789,6 @@ $(function() {
   gtag('js', new Date());
 
   gtag('config', 'UA-41540658-3');
-  alert(window.location.origin);
 </script>
 </body>
 </html>
