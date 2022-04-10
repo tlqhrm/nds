@@ -495,7 +495,7 @@
 
     EJS_onGameStart = function() {
         console.log('start');
-        $.post('/ajax/start-game', {id:EJS_gameID, rid:0}, function(ret) {});
+        $.post('https://www.retrogames.cc/ajax/start-game', {id:EJS_gameID, rid:0}, function(ret) {});
 
         if ($('.ejs--7a5f920ceffb2913f6dbda780573cf').length) {
             $('.reveal-overlay, .reveal.without-overlay').appendTo($('.ejs--7a5f920ceffb2913f6dbda780573cf'));
