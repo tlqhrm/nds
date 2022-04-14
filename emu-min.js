@@ -17780,31 +17780,7 @@ var EJS = function(e) {
                     default:
                         e = {}, console.warn("Unsupported emulator")
                 }
-                return 2 === this.coreVer && (e = {}), !0 === this.statesSupported && (e["save-state-slot"] = {
-                    label: this.localization("Save State Slot"),
-                    options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-                    default: 1
-                }), !0 !== this.statesSupported || !window.indexedDB || "string" != typeof this.gameName && this.config.gameUrl.startsWith("blob:") || (e["save-state-location"] = {
-                    label: this.localization("Save State Location"),
-                    options: {
-                        download: this.localization("download"),
-                        "keep in browser": this.localization("keep in browser")
-                    },
-                    default: "download"
-                }), it.getGameCoreOptions && it.getGameCoreOptions().split("\n").forEach((function(t, n) {
-                    var o = t.split("; "),
-                        r = o[0];
-                    if (0 === r.indexOf("fba-dipswitch-")) {
-                        var a = o[1].split("|"),
-                            i = r.replace(/_/g, " ").replace(/.+\-(.+)/, "$1");
-                        e[r] = {
-                            label: i,
-                            options: a.slice(1, -1),
-                            default: a[0].replace("(Default) ", ""),
-                            netplay: !0
-                        }
-                    }
-                })), e
+                
             },
             supportNetPlay: function() {
                 if (this.lightgun || this.mouse) return !1;
