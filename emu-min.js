@@ -13413,11 +13413,11 @@ var EJS = function(e) {
                 reset: "Reset",
                 disabled: "Disabled",
                 enabled: "Enabled",
-                playNow: "Play Now"
+                playNow: "게임시작"
             },
             listeners: {
                 play: null,
-                pause: null,
+                pause: 32,
                 restart: null,
                 rewind: null,
                 mute: null,
