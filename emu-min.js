@@ -15881,8 +15881,8 @@ var EJS = function(e) {
                     6: "LEFT",
                     7: "RIGHT",
                     8: "A",
-                    24: e.localization("퀵 저장"),
-                    25: e.localization("퀵 불러오기")
+                    24: e.localization("빠른 세이브"),
+                    25: e.localization("빠른 불러오기")
                 };
                 else if ("snes" === e.system) o = {
                     0: "B",
@@ -15897,8 +15897,8 @@ var EJS = function(e) {
                     9: "X",
                     10: "L",
                     11: "R",
-                    24: e.localization("퀵 저장"),
-                    25: e.localization("퀵 불러오기")
+                    24: e.localization("빠른 세이브"),
+                    25: e.localization("빠른 불러오기")
                 };
                 else if ("n64" === e.system) o = {
                     0: "B",
@@ -15919,8 +15919,8 @@ var EJS = function(e) {
                     22: "R STICK DOWN",
                     21: "R STICK LEFT",
                     20: "R STICK RIGHT",
-                    24: e.localization("퀵 저장"),
-                    25: e.localization("퀵 불러오기")
+                    24: e.localization("빠른 세이브"),
+                    25: e.localization("빠른 불러오기")
                 };
                 else if ("nds" === e.system) o = {
                     0: "B",
@@ -15936,8 +15936,8 @@ var EJS = function(e) {
                     10: "L",
                     11: "R",
                     14: "Microphone",
-                    24: e.localization("퀵 저장"),
-                    25: e.localization("퀵 불러오기")
+                    24: e.localization("빠른 세이브"),
+                    25: e.localization("빠른 불러오기")
                 };
                 else o = {
                     0: "B",
@@ -15964,8 +15964,8 @@ var EJS = function(e) {
                     22: "R STICK DOWN",
                     21: "R STICK LEFT",
                     20: "R STICK RIGHT",
-                    24: e.localization("퀵 저장"),
-                    25: e.localization("퀵 불러오기")
+                    24: e.localization("빠른 세이브"),
+                    25: e.localization("빠른 불러오기")
                 };
                 ["arcade", "mame"].includes(e.system) && (o[2] = e.localization("INSERT COIN")), !1 === e.statesSupported && (delete o[24], delete o[25], delete o[26]);
                 for (var r = [2, 3, 4, 5, 6, 7, 8, 0, 9, 1, 10, 11, 12, 13, 14, 15, 19, 18, 17, 16, 23, 22, 21, 20, 24, 25, 26], a = function(a) {
@@ -17178,7 +17178,7 @@ var EJS = function(e) {
                         } catch (e) {}
                         try {
                             var o = at.saveState();
-                            Ke._FS.createDataFile("/", n, o, !0, !0), e.elements.widgets.stateInfoDiv.innerHTML = "퀵세이브 완료", clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
+                            Ke._FS.createDataFile("/", n, o, !0, !0), e.elements.widgets.stateInfoDiv.innerHTML = "빠른 세이브 완료", clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
                                 e.elements.widgets.stateInfoDiv.innerHTML = ""
                             }), 1500)
                         } catch (n) {
@@ -17203,7 +17203,7 @@ var EJS = function(e) {
                         } catch (e) {
                             r = !1
                         }
-                        e.elements.widgets.stateInfoDiv.innerHTML = r ? "퀵로드 완료 ": "FAILED TO LOAD STATE FROM SLOT " + n, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
+                        e.elements.widgets.stateInfoDiv.innerHTML = r ? "빠른 불러오기 완료 ": "FAILED TO LOAD STATE FROM SLOT " + n, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
                             e.elements.widgets.stateInfoDiv.innerHTML = ""
                         }), 1500)
                     }
