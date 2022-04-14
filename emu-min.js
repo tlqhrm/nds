@@ -17167,15 +17167,15 @@ var EJS = function(e) {
                     e.elements.container.focus()
                 }, Ke.Module._set_cheat && (at.setCheat = Ke.Module.cwrap("set_cheat", "number", ["number", "number", "string"])), Ke.Module._reset_cheat && (at.resetCheat = Ke.Module._reset_cheat), at.quickSaveState = function() {
                     if (e.started && !at.connected) {
-                        // if (!1 === e.statesSupported) return e.elements.widgets.stateInfoDiv.innerHTML = "CANNOT CURRENTLY SAVE STATE", clearTimeout(at.saveMsgTransitions), void(at.saveMsgTransitions = setTimeout((function() {
-                        //     e.elements.widgets.stateInfoDiv.innerHTML = ""
-                        // }), 1500));
-                        // if (ct && "function" == typeof ct.getCoreOptionsValues)(t = ct.getCoreOptionsValues()["save-state-slot"]) || (t = 1);
-                        // else var t = 1;
-                        // var n = t + "-quick.state";
-                        // try {
-                        //     Ke.FS.unlink(n)
-                        // } catch (e) {}
+                        if (!1 === e.statesSupported) return e.elements.widgets.stateInfoDiv.innerHTML = "CANNOT CURRENTLY SAVE STATE", clearTimeout(at.saveMsgTransitions), void(at.saveMsgTransitions = setTimeout((function() {
+                            e.elements.widgets.stateInfoDiv.innerHTML = ""
+                        }), 1500));
+                        if (ct && "function" == typeof ct.getCoreOptionsValues)(t = ct.getCoreOptionsValues()["save-state-slot"]) || (t = 1);
+                        else var t = 1;
+                        var n = t + "-quick.state";
+                        try {
+                            Ke.FS.unlink(n)
+                        } catch (e) {}
                         try {
                             var o = at.saveState();
                             Ke._FS.createDataFile("/", n, o, !0, !0), e.elements.widgets.stateInfoDiv.innerHTML = "퀵세이브 완료", clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
