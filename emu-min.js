@@ -17781,12 +17781,7 @@ var EJS = function(e) {
                 return 2 === this.coreVer && (e = {}), !0 === this.statesSupported && (e["save-state-slot"] = {
                     
                 }), !0 !== this.statesSupported || !window.indexedDB || "string" != typeof this.gameName && this.config.gameUrl.startsWith("blob:") || (e["save-state-location"] = {
-                    label: this.localization("Save State Location"),
-                    options: {
-                        download: this.localization("download"),
-                        "keep in browser": this.localization("keep in browser")
-                    },
-                    default: "download"
+                    
                 }), it.getGameCoreOptions && it.getGameCoreOptions().split("\n").forEach((function(t, n) {
                     var o = t.split("; "),
                         r = o[0];

@@ -4982,13 +4982,7 @@ window.EJS_main = function(_0xa88a13, _0x17edbf, _0x2c1832) {
                 if (this.coreVer === 2) {
                     _0xa88a13 = {};
                 }
-                if (this.statesSupported === true) {
-                    _0xa88a13['save-state-slot'] = {
-                        'label': this.localization('Save State Slot'),
-                        'options': [1, 2, 3, 4, 5, 6, 7, 8, 9],
-                        'default': 1
-                    }
-                }
+                
                 if (this.statesSupported === true && window.indexedDB &&
                     (typeof this.gameName == 'string' || !this.config.gameUrl.startsWith('blob:'))) {
                     _0xa88a13['save-state-location'] = {
