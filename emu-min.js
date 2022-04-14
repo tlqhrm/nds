@@ -15882,8 +15882,7 @@ var EJS = function(e) {
                     7: "RIGHT",
                     8: "A",
                     24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE"),
-                    26: e.localization("CHANGE STATE SLOT")
+                    25: e.localization("QUICK LOAD STATE")
                 };
                 else if ("snes" === e.system) o = {
                     0: "B",
@@ -15899,8 +15898,7 @@ var EJS = function(e) {
                     10: "L",
                     11: "R",
                     24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE"),
-                    26: e.localization("CHANGE STATE SLOT")
+                    25: e.localization("QUICK LOAD STATE")
                 };
                 else if ("n64" === e.system) o = {
                     0: "B",
@@ -15922,8 +15920,7 @@ var EJS = function(e) {
                     21: "R STICK LEFT",
                     20: "R STICK RIGHT",
                     24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE"),
-                    26: e.localization("CHANGE STATE SLOT")
+                    25: e.localization("QUICK LOAD STATE")
                 };
                 else if ("nds" === e.system) o = {
                     0: "B",
@@ -15940,8 +15937,7 @@ var EJS = function(e) {
                     11: "R",
                     14: "Microphone",
                     24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE"),
-                    26: e.localization("CHANGE STATE SLOT")
+                    25: e.localization("QUICK LOAD STATE")
                 };
                 else o = {
                     0: "B",
@@ -15969,8 +15965,7 @@ var EJS = function(e) {
                     21: "R STICK LEFT",
                     20: "R STICK RIGHT",
                     24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE"),
-                    26: e.localization("CHANGE")
+                    25: e.localization("QUICK LOAD STATE")
                 };
                 ["arcade", "mame"].includes(e.system) && (o[2] = e.localization("INSERT COIN")), !1 === e.statesSupported && (delete o[24], delete o[25], delete o[26]);
                 for (var r = [2, 3, 4, 5, 6, 7, 8, 0, 9, 1, 10, 11, 12, 13, 14, 15, 19, 18, 17, 16, 23, 22, 21, 20, 24, 25, 26], a = function(a) {
@@ -17172,18 +17167,18 @@ var EJS = function(e) {
                     e.elements.container.focus()
                 }, Ke.Module._set_cheat && (at.setCheat = Ke.Module.cwrap("set_cheat", "number", ["number", "number", "string"])), Ke.Module._reset_cheat && (at.resetCheat = Ke.Module._reset_cheat), at.quickSaveState = function() {
                     if (e.started && !at.connected) {
-                        if (!1 === e.statesSupported) return e.elements.widgets.stateInfoDiv.innerHTML = "CANNOT CURRENTLY SAVE STATE", clearTimeout(at.saveMsgTransitions), void(at.saveMsgTransitions = setTimeout((function() {
-                            e.elements.widgets.stateInfoDiv.innerHTML = ""
-                        }), 1500));
-                        if (ct && "function" == typeof ct.getCoreOptionsValues)(t = ct.getCoreOptionsValues()["save-state-slot"]) || (t = 1);
-                        else var t = 1;
-                        var n = t + "-quick.state";
-                        try {
-                            Ke.FS.unlink(n)
-                        } catch (e) {}
+                        // if (!1 === e.statesSupported) return e.elements.widgets.stateInfoDiv.innerHTML = "CANNOT CURRENTLY SAVE STATE", clearTimeout(at.saveMsgTransitions), void(at.saveMsgTransitions = setTimeout((function() {
+                        //     e.elements.widgets.stateInfoDiv.innerHTML = ""
+                        // }), 1500));
+                        // if (ct && "function" == typeof ct.getCoreOptionsValues)(t = ct.getCoreOptionsValues()["save-state-slot"]) || (t = 1);
+                        // else var t = 1;
+                        // var n = t + "-quick.state";
+                        // try {
+                        //     Ke.FS.unlink(n)
+                        // } catch (e) {}
                         try {
                             var o = at.saveState();
-                            Ke._FS.createDataFile("/", n, o, !0, !0), e.elements.widgets.stateInfoDiv.innerHTML = "STATE SAVED TO SLOT " + t, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
+                            Ke._FS.createDataFile("/", n, o, !0, !0), e.elements.widgets.stateInfoDiv.innerHTML = "퀵세이브 완료" + t, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
                                 e.elements.widgets.stateInfoDiv.innerHTML = ""
                             }), 1500)
                         } catch (n) {
@@ -17208,7 +17203,7 @@ var EJS = function(e) {
                         } catch (e) {
                             r = !1
                         }
-                        e.elements.widgets.stateInfoDiv.innerHTML = r ? "LOADED STATE FROM SLOT " + n : "FAILED TO LOAD STATE FROM SLOT " + n, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
+                        e.elements.widgets.stateInfoDiv.innerHTML = r ? "퀵로드 완료 " + n : "FAILED TO LOAD STATE FROM SLOT " + n, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
                             e.elements.widgets.stateInfoDiv.innerHTML = ""
                         }), 1500)
                     }
