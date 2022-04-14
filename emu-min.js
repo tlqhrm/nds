@@ -15970,7 +15970,7 @@ var EJS = function(e) {
                     20: "R STICK RIGHT",
                     24: e.localization("QUICK SAVE STATE"),
                     25: e.localization("QUICK LOAD STATE"),
-                    26: e.localization("CHANGE STATE SLOT")
+                    26: e.localization("CHANGE")
                 };
                 ["arcade", "mame"].includes(e.system) && (o[2] = e.localization("INSERT COIN")), !1 === e.statesSupported && (delete o[24], delete o[25], delete o[26]);
                 for (var r = [2, 3, 4, 5, 6, 7, 8, 0, 9, 1, 10, 11, 12, 13, 14, 15, 19, 18, 17, 16, 23, 22, 21, 20, 24, 25, 26], a = function(a) {
