@@ -17780,7 +17780,20 @@ var EJS = function(e) {
                     default:
                         e = {}, console.warn("Unsupported emulator")
                 }
-                
+                return 2 === this.coreVer && (e = {}), !0 === this.statesSupported && it.getGameCoreOptions && it.getGameCoreOptions().split("\n").forEach((function(t, n) {
+                    var o = t.split("; "),
+                        r = o[0];
+                    if (0 === r.indexOf("fba-dipswitch-")) {
+                        var a = o[1].split("|"),
+                            i = r.replace(/_/g, " ").replace(/.+\-(.+)/, "$1");
+                        e[r] = {
+                            label: i,
+                            options: a.slice(1, -1),
+                            default: a[0].replace("(Default) ", ""),
+                            netplay: !0
+                        }
+                    }
+                })), e
             },
             supportNetPlay: function() {
                 if (this.lightgun || this.mouse) return !1;
