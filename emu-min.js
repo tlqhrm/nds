@@ -17216,9 +17216,7 @@ var EJS = function(e) {
                     var n;
                     if (ct && "function" == typeof ct.getCoreOptionsValues)(o = ct.getCoreOptionsValues()["save-state-slot"]) || (o = 1);
                     else var o = 1;
-                    (n = "number" != typeof t ? o + 1 : t) > 9 && (n = 1), st.updateCoreOptions.call(e, "save-state-slot", n), e.elements.widgets.stateInfoDiv.innerHTML = "SET SAVE STATE SLOT TO " + n, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
-                        e.elements.widgets.stateInfoDiv.innerHTML = ""
-                    }), 1500)
+                   
                 }, window.EJS_loadState = function(e) {
                     at.loadState(e, 0), setTimeout((function() {
                         if (at.connected) {
@@ -17781,9 +17779,7 @@ var EJS = function(e) {
                         e = {}, console.warn("Unsupported emulator")
                 }
                 return 2 === this.coreVer && (e = {}), !0 === this.statesSupported && (e["save-state-slot"] = {
-                    label: this.localization("Save State Slot"),
-                    options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-                    default: 1
+                    
                 }), !0 !== this.statesSupported || !window.indexedDB || "string" != typeof this.gameName && this.config.gameUrl.startsWith("blob:") || (e["save-state-location"] = {
                     label: this.localization("Save State Location"),
                     options: {
