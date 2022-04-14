@@ -13391,22 +13391,22 @@ var EJS = function(e) {
             volume: .5,
             muted: !1,
             i18n: {
-                restart: "Restart",
-                play: "Play",
-                pause: "Pause",
+                restart: "재시작",
+                play: "시작 (Space)",
+                pause: "일시정지 (Space)",
                 played: "Played",
-                volume: "Volume",
-                mute: "Mute (F9)",
-                unmute: "Unmute (F9)",
-                enterFullscreen: "Enter fullscreen",
-                exitFullscreen: "Exit fullscreen",
-                settings: "Settings",
-                saveState: "Save State (Shift + F2)",
-                loadState: "Load State (Shift + F4)",
-                screenRecord: "Start Screen Recording",
-                netplay: "Netplay",
-                gamepad: "Control Settings",
-                cheat: "Cheats",
+                volume: "음량",
+                mute: "음소거 (F9)",
+                unmute: "음소거 해제 (F9)",
+                enterFullscreen: "전체화면",
+                exitFullscreen: "전체화면 종료",
+                settings: "설정",
+                saveState: "세이브 (Shift + F2)",
+                loadState: "불러오기 (Shift + F4)",
+                screenRecord: "화면녹화 시작",
+                netplay: "멀티플레이",
+                gamepad: "키 설정",
+                cheat: "치트",
                 menuBack: "Go back to previous menu",
                 normal: "Normal",
                 all: "All",
@@ -15869,8 +15869,8 @@ var EJS = function(e) {
             },
             setGamepadDialog: function() {
                 var e = this;
-                e.elements.dialogs.gamepad.innerHTML = '\n        <div class="' + at.classNames["dialog-container"] + '">\n            <div class="' + at.classNames["dialog-title"] + '">\n                <h4>' + e.localization("Control Settings") + '</h4>\n            </div>\n            \n            <ul class="' + at.classNames.tabs + '" id="controls-tabs">\n                <li class="tabs-title" role="presentation"><a href="#" onclick="return false" role="tab" aria-controls="controls-0" aria-selected="false" id="controls-0-label">' + e.localization("Player 1") + '</a></li>\n                <li class="tabs-title" role="presentation"><a href="#" onclick="return false" role="tab" aria-controls="controls-1" aria-selected="false" id="controls-1-label">' + e.localization("Player 2") + '</a></li>\n                <li class="tabs-title" role="presentation"><a href="#" onclick="return false" role="tab" aria-controls="controls-2" aria-selected="false" id="controls-2-label">' + e.localization("Player 3") + '</a></li>\n                <li class="tabs-title" role="presentation"><a href="#" onclick="return false" role="tab" aria-controls="controls-3" aria-selected="false" id="controls-3-label">' + e.localization("Player 4") + '</a></li>\n            </ul>\n            <div class="' + at.classNames["dialog-content"] + '">\n            <div class="' + at.classNames["tabs-content"] + ' controls">\n                \n            </div>\n            </div>\n            <div class="' + at.classNames["dialog-buttons"] + '">\n                <a href="#" onclick="return false" class="' + at.classNames["btn-submit"] + '">' + e.localization("Update") + '</a>\n                <a href="#" onclick="return false" class="' + at.classNames["btn-reset"] + '">' + e.localization("Reset") + '</a>\n                <a href="#" onclick="return false" class="' + at.classNames["btn-clear"] + '">' + e.localization("Clear") + '</a>\n                <a href="#" onclick="return false" class="' + at.classNames["btn-cancel"] + '">' + e.localization("Cancel") + '</a>\n            </div>\n            <div class="' + at.classNames.overlay + '" hidden>\n                <div class="' + at.classNames["key-setting-popup"] + '">\n                    <span>[Select]</span><br />\n                    <div style="color:#fff !important">' + e.localization("Press keyboard or gamepad") + "</div>\n                </div>\n            </div>\n        </div>\n        ";
-                var t = '\n        <div class="'.concat(at.classNames["tabs-panel"], '" id="controls-{index}" hidden>\n            <div>\n                <div style="">\n                    <div class="gamepad" style="font-size:12px">Connected gamepad: <span class="gamepad-name">n/a</span></div>\n                </div>\n                <div style="width:25%;float:left">&nbsp;</div>\n                <div style="font-size:12px;width:50%;float:left">\n                    <div class="row">\n                        <div style="text-align:center;width:50%;float:left">' + e.localization("Gamepad") + '</div>\n                        <div style="text-align:center;width:50%;float:left">' + e.localization("Keyboard") + '</div>\n                    </div>\n                </div>\n                <div style="clear:both"></div>\n            </div>\n        </div>'),
+                e.elements.dialogs.gamepad.innerHTML = '\n        <div class="' + at.classNames["dialog-container"] + '">\n            <div class="' + at.classNames["dialog-title"] + '">\n                <h4>' + e.localization("키 설정") + '</h4>\n            </div>\n            \n            <ul class="' + at.classNames.tabs + '" id="controls-tabs">\n                <li class="tabs-title" role="presentation"><a href="#" onclick="return false" role="tab" aria-controls="controls-0" aria-selected="false" id="controls-0-label">' + e.localization("플레이어 1") + '</a></li>\n                <li class="tabs-title" role="presentation"><a href="#" onclick="return false" role="tab" aria-controls="controls-1" aria-selected="false" id="controls-1-label">' + e.localization("플레이어 2") + '</a></li>\n                <li class="tabs-title" role="presentation"><a href="#" onclick="return false" role="tab" aria-controls="controls-2" aria-selected="false" id="controls-2-label">' + e.localization("플레이어 3") + '</a></li>\n                <li class="tabs-title" role="presentation"><a href="#" onclick="return false" role="tab" aria-controls="controls-3" aria-selected="false" id="controls-3-label">' + e.localization("플레이어 4") + '</a></li>\n            </ul>\n            <div class="' + at.classNames["dialog-content"] + '">\n            <div class="' + at.classNames["tabs-content"] + ' controls">\n                \n            </div>\n            </div>\n            <div class="' + at.classNames["dialog-buttons"] + '">\n                <a href="#" onclick="return false" class="' + at.classNames["btn-submit"] + '">' + e.localization("저장") + '</a>\n                <a href="#" onclick="return false" class="' + at.classNames["btn-reset"] + '">' + e.localization("되돌리기") + '</a>\n                <a href="#" onclick="return false" class="' + at.classNames["btn-clear"] + '">' + e.localization("전체삭제") + '</a>\n                <a href="#" onclick="return false" class="' + at.classNames["btn-cancel"] + '">' + e.localization("취소") + '</a>\n            </div>\n            <div class="' + at.classNames.overlay + '" hidden>\n                <div class="' + at.classNames["key-setting-popup"] + '">\n                    <span>[Select]</span><br />\n                    <div style="color:#fff !important">' + e.localization("버튼을 눌러주세요") + "</div>\n                </div>\n            </div>\n        </div>\n        ";
+                var t = '\n        <div class="'.concat(at.classNames["tabs-panel"], '" id="controls-{index}" hidden>\n            <div>\n                <div style="">\n                    <div class="gamepad" style="font-size:12px">연결된 게임패드: <span class="gamepad-name">n/a</span></div>\n                </div>\n                <div style="width:25%;float:left">&nbsp;</div>\n                <div style="font-size:12px;width:50%;float:left">\n                    <div class="row">\n                        <div style="text-align:center;width:50%;float:left">' + e.localization("게임패드") + '</div>\n                        <div style="text-align:center;width:50%;float:left">' + e.localization("키보드") + '</div>\n                    </div>\n                </div>\n                <div style="clear:both"></div>\n            </div>\n        </div>'),
                     n = '\n        <div class="'.concat(at.classNames["button-container"], '" data-id="{id}" data-index="{index}" data-label="{label}" style="margin-bottom:10px">\n            <div style="width:25%;float:left;font-size:12px">\n                <label>{label}:</label>\n            </div>\n            <div style="width:50%;float:left">\n                <div>\n                    <div style="width:50%;float:left;padding: 0 5px;">\n                        <input style="text-align:center;height:25px;width: 100%;" type="text" data-id="{id}" data-value="" data-type="2" data-index="{index}" readonly="" placeholder="">\n                    </div>\n                    <div style="width:50%;float:left;padding: 0 5px;">\n                        <input style="text-align:center;height:25px;width: 100%;" type="text" data-id="{id}" data-value="" data-type="1" data-index="{index}" readonly="" placeholder="">\n                    </div>\n                    <div style="clear:both"></div>\n                </div>\n            </div>\n            <div style="width:25%;float:left">\n                <a class="').concat(at.classNames.set, '" href="#" onclick="return false">' + e.localization("Set") + '</a>\n            </div>\n            <div style="clear:both"></div>\n        </div>');
                 if ("nes" === e.system) var o = {
                     0: "B",
@@ -15881,8 +15881,8 @@ var EJS = function(e) {
                     6: "LEFT",
                     7: "RIGHT",
                     8: "A",
-                    24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE")
+                    24: e.localization("퀵 저장"),
+                    25: e.localization("퀵 불러오기")
                 };
                 else if ("snes" === e.system) o = {
                     0: "B",
@@ -15897,8 +15897,8 @@ var EJS = function(e) {
                     9: "X",
                     10: "L",
                     11: "R",
-                    24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE")
+                    24: e.localization("퀵 저장"),
+                    25: e.localization("퀵 불러오기")
                 };
                 else if ("n64" === e.system) o = {
                     0: "B",
@@ -15919,8 +15919,8 @@ var EJS = function(e) {
                     22: "R STICK DOWN",
                     21: "R STICK LEFT",
                     20: "R STICK RIGHT",
-                    24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE")
+                    24: e.localization("퀵 저장"),
+                    25: e.localization("퀵 불러오기")
                 };
                 else if ("nds" === e.system) o = {
                     0: "B",
@@ -15936,8 +15936,8 @@ var EJS = function(e) {
                     10: "L",
                     11: "R",
                     14: "Microphone",
-                    24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE")
+                    24: e.localization("퀵 저장"),
+                    25: e.localization("퀵 불러오기")
                 };
                 else o = {
                     0: "B",
@@ -15964,8 +15964,8 @@ var EJS = function(e) {
                     22: "R STICK DOWN",
                     21: "R STICK LEFT",
                     20: "R STICK RIGHT",
-                    24: e.localization("QUICK SAVE STATE"),
-                    25: e.localization("QUICK LOAD STATE")
+                    24: e.localization("퀵 저장"),
+                    25: e.localization("퀵 불러오기")
                 };
                 ["arcade", "mame"].includes(e.system) && (o[2] = e.localization("INSERT COIN")), !1 === e.statesSupported && (delete o[24], delete o[25], delete o[26]);
                 for (var r = [2, 3, 4, 5, 6, 7, 8, 0, 9, 1, 10, 11, 12, 13, 14, 15, 19, 18, 17, 16, 23, 22, 21, 20, 24, 25, 26], a = function(a) {
@@ -16066,7 +16066,7 @@ var EJS = function(e) {
             setCheatDialog: function() {
                 var e = this;
                 if (e.elements.dialogs.cheat) {
-                    e.elements.dialogs.cheat.innerHTML = '\n            <div class="'.concat(at.classNames["dialog-container"], '">\n                <div class="').concat(at.classNames["dialog-title"], '">\n                    <h4>Cheats</h4>\n                </div>\n                <div class="').concat(at.classNames["dialog-content"], '">\n                    <div class="').concat(at.classNames["cheats-list"], '">\n                        \n                    </div>\n                </div>\n                <div class="').concat(at.classNames["dialog-buttons"], '">\n                    <a href="#" onclick="return false" class="').concat(at.classNames["cheats-add"], '">' + e.localization("Add Cheat") + '</a>\n                    <a href="#" onclick="return false" class="').concat(at.classNames["btn-submit"], '">' + e.localization("OK") + '</a>\n                    <a href="#" onclick="return false" class="').concat(at.classNames["btn-cancel"], '">Close</a>\n                </div>\n            </div>\n\n            \n\n            <div class="').concat(at.classNames.modal, " ").concat(at.classNames["micromodal-slide"], '" id="modal-85cd7a1c543a484b" aria-hidden="true">\n                <div class="').concat(at.classNames.modal__overlay, '" tabindex="-1" data-modal-close>\n                <div class="').concat(at.classNames.modal__container, '" style="width:100%" role="dialog" aria-modal="true" aria-labelledby="modal-85cd7a1c543a484b-title">\n                    <div class="').concat(at.classNames.modal__header, '">\n                    <h2 class="').concat(at.classNames.modal__title, '" id="modal-85cd7a1c543a484b-title">\n                    ' + e.localization("Add Cheat Code") + '\n                    </h2>\n                    <button class="').concat(at.classNames.modal__close, '" aria-label="Close modal" data-modal-close></button>\n                    </div>\n                    <main class="').concat(at.classNames.modal__content, '" id="modal-85cd7a1c543a484b-content">\n\n                        <div class="').concat(at.classNames.modal__errmsg, '"></div>\n                        <strong>' + e.localization("Code") + '</strong><br />\n                        <textarea style="width:100%;height:80px;" class="').concat(at.classNames["cheat-code-input"], '"></textarea><br />\n                        <strong>' + e.localization("Description") + '</strong><br />\n                        <input type="text" class="').concat(at.classNames["cheat-name-input"], '" /><br />\n\n                    </main>\n                    <footer class="').concat(at.classNames.modal__footer, '">\n                    <button class="').concat(at.classNames.modal__btn, " ").concat(at.classNames["modal__btn-primary"], '">' + e.localization("Submit") + '</button>\n                    <button class="').concat(at.classNames.modal__btn, '" data-modal-close aria-label="Close">' + e.localization("Close") + "</button>\n                    </footer>\n                </div>\n                </div>\n            </div>\n            ");
+                    e.elements.dialogs.cheat.innerHTML = '\n            <div class="'.concat(at.classNames["dialog-container"], '">\n                <div class="').concat(at.classNames["dialog-title"], '">\n                    <h4>치트</h4>\n                </div>\n                <div class="').concat(at.classNames["dialog-content"], '">\n                    <div class="').concat(at.classNames["cheats-list"], '">\n                        \n                    </div>\n                </div>\n                <div class="').concat(at.classNames["dialog-buttons"], '">\n                    <a href="#" onclick="return false" class="').concat(at.classNames["cheats-add"], '">' + e.localization("치트 등록") + '</a>\n                    <a href="#" onclick="return false" class="').concat(at.classNames["btn-submit"], '">' + e.localization("완료") + '</a>\n                    <a href="#" onclick="return false" class="').concat(at.classNames["btn-cancel"], '">닫기</a>\n                </div>\n            </div>\n\n            \n\n            <div class="').concat(at.classNames.modal, " ").concat(at.classNames["micromodal-slide"], '" id="modal-85cd7a1c543a484b" aria-hidden="true">\n                <div class="').concat(at.classNames.modal__overlay, '" tabindex="-1" data-modal-close>\n                <div class="').concat(at.classNames.modal__container, '" style="width:100%" role="dialog" aria-modal="true" aria-labelledby="modal-85cd7a1c543a484b-title">\n                    <div class="').concat(at.classNames.modal__header, '">\n                    <h2 class="').concat(at.classNames.modal__title, '" id="modal-85cd7a1c543a484b-title">\n                    ' + e.localization("치트 등록") + '\n                    </h2>\n                    <button class="').concat(at.classNames.modal__close, '" aria-label="Close modal" data-modal-close></button>\n                    </div>\n                    <main class="').concat(at.classNames.modal__content, '" id="modal-85cd7a1c543a484b-content">\n\n                        <div class="').concat(at.classNames.modal__errmsg, '"></div>\n                        <strong>' + e.localization("코드") + '</strong><br />\n                        <textarea style="width:100%;height:80px;" class="').concat(at.classNames["cheat-code-input"], '"></textarea><br />\n                        <strong>' + e.localization("설명") + '</strong><br />\n                        <input type="text" class="').concat(at.classNames["cheat-name-input"], '" /><br />\n\n                    </main>\n                    <footer class="').concat(at.classNames.modal__footer, '">\n                    <button class="').concat(at.classNames.modal__btn, " ").concat(at.classNames["modal__btn-primary"], '">' + e.localization("저장") + '</button>\n                    <button class="').concat(at.classNames.modal__btn, '" data-modal-close aria-label="Close">' + e.localization("닫기") + "</button>\n                    </footer>\n                </div>\n                </div>\n            </div>\n            ");
                     var t = e.elements.dialogs.cheat.querySelector("#modal-85cd7a1c543a484b");
                     M.call(this, e.elements.dialogs.cheat.querySelector(".".concat(at.classNames["cheats-add"])), "click", (function(e) {
                         return rt.show("modal-85cd7a1c543a484b", {
@@ -16990,7 +16990,7 @@ var EJS = function(e) {
                             stopped: !1
                         }), e.recordData.started) e.recordData.started && (e.recordData.recorder.stop(), e.recordData.stopped = !0);
                     else {
-                        if (e.elements.buttons.screenRecord.getElementsByClassName("ejs--74c6d4176d27e37a19d2e9e61de8f4")[0].innerHTML = e.localization("Stop Screen Recording"), MediaRecorder.isTypeSupported("video/webm; codecs=h264")) var n = {
+                        if (e.elements.buttons.screenRecord.getElementsByClassName("ejs--74c6d4176d27e37a19d2e9e61de8f4")[0].innerHTML = e.localization("화면녹화 정지"), MediaRecorder.isTypeSupported("video/webm; codecs=h264")) var n = {
                             mimeType: "video/webm; codecs=h264"
                         };
                         else if (MediaRecorder.isTypeSupported("video/webm; codecs=H264")) n = {
