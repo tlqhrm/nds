@@ -18696,7 +18696,7 @@ var EJS = function(e) {
                     t = this.emulator,
                     n = t;
                 k.call(n, document.body, "click", this.toggleMenu, e), R.call(n, document.body, "touchstart", this.firstTouch), k.call(n, document.body, "keydown focus blur", this.setTabFocus, e, !1, !0), M.call(n, document.body, "keyup", (function(e) {
-                    n.started && (113 === e.which && (e.shiftKey ? null === n.elements.buttons.saveState.getAttribute("hidden") && P.call(n, n.elements.buttons.saveState, "click") : it.quickSaveState()), 115 === e.which && (e.shiftKey ? null === n.elements.buttons.loadState.getAttribute("hidden") && P.call(n, n.elements.buttons.loadState, "click") : it.quickLoadState()), 120 === e.which && P.call(n, n.elements.buttons.mute, "click"), 113 === e.which && P.call(n, n.elements.buttons.pause, "click"))
+                    n.started && (113 === e.which && (e.shiftKey ? null === n.elements.buttons.saveState.getAttribute("hidden") && P.call(n, n.elements.buttons.saveState, "click") : it.quickSaveState()), 115 === e.which && (e.shiftKey ? null === n.elements.buttons.loadState.getAttribute("hidden") && P.call(n, n.elements.buttons.loadState, "click") : it.quickLoadState()), 120 === e.which && P.call(n, n.elements.buttons.mute, "click"), 114 === e.which && P.call(n, n.elements.buttons.pause, "click"))
                 }))
             },
             container: function() {
