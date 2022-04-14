@@ -17208,12 +17208,12 @@ var EJS = function(e) {
                         }), 1500)
                     }
                 }, at.changeStateSlot = function(t) {
-                    var n;
-                    if (ct && "function" == typeof ct.getCoreOptionsValues)(o = ct.getCoreOptionsValues()["save-state-slot"]) || (o = 1);
-                    else var o = 1;
-                    (n = "number" != typeof t ? o + 1 : t) > 9 && (n = 1), st.updateCoreOptions.call(e, "save-state-slot", n), e.elements.widgets.stateInfoDiv.innerHTML = "SET SAVE STATE SLOT TO " + n, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
-                        e.elements.widgets.stateInfoDiv.innerHTML = ""
-                    }), 1500)
+                    // var n;
+                    // if (ct && "function" == typeof ct.getCoreOptionsValues)(o = ct.getCoreOptionsValues()["save-state-slot"]) || (o = 1);
+                    // else var o = 1;
+                    // (n = "number" != typeof t ? o + 1 : t) > 9 && (n = 1), st.updateCoreOptions.call(e, "save-state-slot", n), e.elements.widgets.stateInfoDiv.innerHTML = "SET SAVE STATE SLOT TO " + n, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
+                    //     e.elements.widgets.stateInfoDiv.innerHTML = ""
+                    // }), 1500)
                 }, window.EJS_loadState = function(e) {
                     at.loadState(e, 0), setTimeout((function() {
                         if (at.connected) {
