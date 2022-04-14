@@ -17178,7 +17178,7 @@ var EJS = function(e) {
                         // } catch (e) {}
                         try {
                             var o = at.saveState();
-                            Ke._FS.createDataFile("/", n, o, !0, !0), e.elements.widgets.stateInfoDiv.innerHTML = "퀵세이브 완료" + t, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
+                            Ke._FS.createDataFile("/", n, o, !0, !0), e.elements.widgets.stateInfoDiv.innerHTML = "퀵세이브 완료", clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
                                 e.elements.widgets.stateInfoDiv.innerHTML = ""
                             }), 1500)
                         } catch (n) {
@@ -17203,7 +17203,7 @@ var EJS = function(e) {
                         } catch (e) {
                             r = !1
                         }
-                        e.elements.widgets.stateInfoDiv.innerHTML = r ? "퀵로드 완료 " + n : "FAILED TO LOAD STATE FROM SLOT " + n, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
+                        e.elements.widgets.stateInfoDiv.innerHTML = r ? "퀵로드 완료 ": "FAILED TO LOAD STATE FROM SLOT " + n, clearTimeout(at.saveMsgTransitions), at.saveMsgTransitions = setTimeout((function() {
                             e.elements.widgets.stateInfoDiv.innerHTML = ""
                         }), 1500)
                     }
