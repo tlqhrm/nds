@@ -13417,7 +13417,7 @@ var EJS = function(e) {
             },
             listeners: {
                 play: null,
-                pause: 32,
+                pause: 8,
                 restart: null,
                 rewind: null,
                 mute: null,
