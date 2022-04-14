@@ -4982,7 +4982,24 @@ window.EJS_main = function(_0xa88a13, _0x17edbf, _0x2c1832) {
                 if (this.coreVer === 2) {
                     _0xa88a13 = {};
                 }
-                
+                if (this.statesSupported === true) {
+                    _0xa88a13['save-state-slot'] = {
+                        'label': this.localization('Save State Slot'),
+                        'options': [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                        'default': 1
+                    }
+                }
+                if (this.statesSupported === true && window.indexedDB &&
+                    (typeof this.gameName == 'string' || !this.config.gameUrl.startsWith('blob:'))) {
+                    _0xa88a13['save-state-location'] = {
+                        'label': this.localization('Save State Location'),
+                        'options': {
+                            'download': this.localization('download'),
+                            'keep in browser': this.localization('keep in browser')
+                        },
+                        'default': 'download'
+                    }
+                }
                 _0xdcec2a.getGameCoreOptions && _0xdcec2a.getGameCoreOptions().split('\n').forEach(function(_0x2bef5a, _0x49b64b) {
                     var _0x5995db = _0x2bef5a.split('; '),
                         _0x16274c = _0x5995db[0x0];
