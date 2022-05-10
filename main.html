@@ -61,93 +61,8 @@
         //     document.location.href = 'https://www.retrogames.cc/gameboyadvance-games/2-in-1-dragon-ball-z-buu-s-fury-dragon-ball-gt-transformation-u-independent.html';
         // }
     </script>
-    <div style="width:auto;height:100%;max-width:100%;margin:0 auto">
-    <div id="game">
-    <div style="text-align:center">
-    
-    <p style="margin-top: calc(50vh - 20px);font-size:30px">Loading...</p>
-    </div>
-    </div>
-    <div class="save-state-process" style="position: absolute !important;;display: none;">
-    <div class="circle">
-    <div class="percent left"></div>
-    <div class="percent right wth0"></div>
-    </div>
-    <div class="num"><span>0</span>%</div>
-    </div>
-    <div class="small reveal" id="loginModal" data-reveal>
-    <h1 class="title" style="font-size:24px">로그인</h1>
-    <div class="content">
-    <div class="login-form" style="display: block;border:none;width: 100%;position: static">
-    <form method="post" action="">
-    <div class="input-group">
-    <span class="input-group-label"><i class="fa fa-user"></i></span>
-    <input class="input-group-field" name="_username" type="text" placeholder="Enter username">
-    </div>
-    <div class="input-group">
-    <span class="input-group-label"><i class="fa fa-lock"></i></span>
-    <input class="input-group-field" name="_password" type="password" placeholder="Enter password">
-    </div>
-    <div class="checkbox">
-    <input id="check1" type="checkbox" name="_remember_me" value="1">
-    <label class="customLabel" for="check1">Remember me</label>
-    </div>
-    <input type="submit" name="submit" value="Login Now">
-    </form>
-    <p class="text-center">New here? <a target="_blank" class="newaccount" href="/register.html">Create a new Account</a></p>
-    <h5 class="text-center">OR</h5>
-    <div class="social-login" data-equalizer-watch="">
-    <div class="social-login-btn facebook" style="max-width: 250px;margin: 0 auto;">
-    <a href="#" class="fb-login"><i class="fa fa-facebook"></i>login via facebook</a>
-    </div>
-    </div>
-    </div>
-    </div>
-    <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span style="color: #000;font-size: 20px" aria-hidden="true">&times;</span>
-    </button>
-    </div>
-    <div class="large reveal fill-height" id="loadStates" data-reveal>
-    <h1 class="title">세이브 불러오기</h1>
-    <ul class="tabs">
-    <li><a href="#" class="active">Upload</a></li>
-    <li><a href="#">From Server</a></li>
-    </ul>
-    <div class="tab-contents">
-    <div class="content active">
-    <div class="drag-drop-inside">
-    <p>Drop files here</p>
-    <p>or</p>
-    <p><input id="file-browse-button" type="button" value="Select Files" class="button tiny" style="position: relative; z-index: 1;"></p>
-    </div>
-    </div>
-    <div class="content">
-    </div>
-    </div>
-    <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span style="color: #fff;font-size: 20px" aria-hidden="true">&times;</span>
-    </button>
-    </div>
-    <div class="tiny reveal" id="dialogModal" data-reveal data-overlay="false">
-    <h1 class="title" style="font-size:18px"></h1>
-    <div class="content"></div>
-    <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span style="color: #fff;font-size: 20px" aria-hidden="true">&times;</span>
-    </button>
-     <div class="actions text-center">
-    <a class="button primary submit tiny" data-close tabindex="0">확인</a>
-    <a class="button tiny cancel" data-close tabindex="0">취소</a>
-    </div>
-    </div>
-    </div>
     
 
-    <h1>main page</h1>
-
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-        Atque, ullam quos! Iste quae, molestiae vitae tenetur, 
-        in a aperiam voluptatibus dicta qui doloribus libero suscipit optio delectus voluptas voluptatem impedit!</p>
-        
     <!-- <div style="width:640px;height:480px;max-width:100%">
         <div id="game"></div>
     </div> -->
@@ -494,66 +409,259 @@
     });
 
         
-        EJS_player = '#game';
-        EJS_biosUrl = '';
-        EJS_pathtodata = "https://rawcdn.githack.com/tlqhrm/nds/29002b2/";
-        EJS_gameUrl = 'https://rawcdn.githack.com/tlqhrm/nds/2287297389cbfdcfcfeffdd723621d16f01e461a/%ED%8F%AC%EC%BC%93%20%EB%AA%AC%EC%8A%A4%ED%84%B0%20%EB%A3%A8%EB%B9%84(K).gba'; // Url to Game rom
-        EJS_core = 'gba';
+    EJS_player = '#game';
+    EJS_biosUrl = '';
+    EJS_pathtodata = "https://rawcdn.githack.com/tlqhrm/nds/29002b2/";
+    EJS_gameUrl = 'https://rawcdn.githack.com/tlqhrm/nds/2287297389cbfdcfcfeffdd723621d16f01e461a/%ED%8F%AC%EC%BC%93%20%EB%AA%AC%EC%8A%A4%ED%84%B0%20%EB%A3%A8%EB%B9%84(K).gba'; // Url to Game rom
+    EJS_core = 'gba';
 
-        var saveStateToLocal = function(screenshot, state) {
-            saveAs(new Blob([state], {type:"application/octet-stream"}), 'game.state');
-        };
-        EJS_onSaveState = function(data) {
+    var saveStateToLocal = function(screenshot, state) {
+        saveAs(new Blob([state], {type:"application/octet-stream"}), 'game.state');
+    };
 
-            // var state = jz.zlib.compress(new Uint8Array(fr.result));
-            var state = data.state;
-            var screenshot = data.screenshot;
-            // saveStateToLocal(screenshot, state);
-            // var f = new Blob([data.state], {type:"application/octet-stream"});
-            // var fr = new FileReader();
-            // fr.onload = function() {
-            //     var state = jz.zlib.compress(new Uint8Array(fr.result));
-            //     var screenshot = data.screenshot;
-            //     saveStateToLocal(screenshot, state);
-            // }
-            dialogModal.foundation('open');
-                dialogModal.find('h1.title').text('세이브 파일');
-                dialogModal.find('.content').html(
+    EJS_onGameStart = function() {
+    console.log('start');
+    $.post('/ajax/start-game', {id:EJS_gameID, rid:0}, function(ret) {});
 
-                    '<p><input id="state_saveto_file" checked type="radio" value="file" name="saveto" /><label class="customLabel" for="state_saveto_file"><span>파일로 저장</span></label></p>'+
-                    (state.length < 2.5*1024*1024 ? '<p><input id="state_saveto_server" type="radio" value="server" name="saveto" /><label class="customLabel" for="state_saveto_server"><span>서버에 저장</span></label></p>' : '') +
-                    '<p><input type="checkbox" id="check_remember_saveto" name="remember_saveto" value="1" /><label for="check_remember_saveto" class="customLabel">다시 묻지 않음</label></p>');
-                dialogModal.find('.actions .submit').one('click', function() {
-                    var saveto = dialogModal.find('[name=saveto]:checked').val();
-                    var remember = dialogModal.find('[name=remember_saveto]:checked').val();
-                    if (remember == 1) {
-                        // localStorage.setItem('save_location', saveto);
-                        saveLocation = saveto;
-                    }
-                    if (saveto == 'file') {
-                        saveStateToLocal(screenshot, state);
-                        saving = false;
-                    } else if (saveto == 'server') {
-                        saveStateToServer(screenshot, state);
+    if ($('.ejs--7a5f920ceffb2913f6dbda780573cf').length) {
+        $('.reveal-overlay, .reveal.without-overlay').appendTo($('.ejs--7a5f920ceffb2913f6dbda780573cf'));
+    }
+    };
+    var saving = 0;
 
-                    }
-                });
+    var URL = window.URL || window.webkitURL || window.mozURL;
 
-                dialogModal.on('closed.zf.reveal', function() {
+
+    var confirm = function(title, message, callback) {
+		var modal = '<div class="reveal small" id="confirmation">'+
+			     		'<h2>'+title+'</h2>'+
+			   		'<p class="lead">'+message+'</p>'+
+         			'<button class="button small success yes">Yes</button>'+
+			    		'<button class="button small alert float-right" data-close>No</button>'+
+		       		'</div>';
+        if ($('.ejs--7a5f920ceffb2913f6dbda780573cf').length) {
+		    $('.ejs--7a5f920ceffb2913f6dbda780573cf').append(modal);
+        } else {
+            $(document.body).append(modal);
+        }
+		var confirmation = new Foundation.Reveal($('#confirmation'), {multipleOpened:true});
+        
+        if ($('.ejs--7a5f920ceffb2913f6dbda780573cf').length) {
+            $('#confirmation').closest('.reveal-overlay').appendTo('.ejs--7a5f920ceffb2913f6dbda780573cf');
+        }
+
+		confirmation.open();
+    
+		$('#confirmation').children('.yes').on('click', function() {
+			confirmation.close();
+			$('#confirmation').remove();
+      	    callback.call();
+    	});
+	};
+    $(document).on('closed.zf.reveal', '#confirmation', function() {
+        $('#confirmation').remove();
+    });
+    
+    $(document).on('open.zf.reveal', '#confirmation', function() {
+        
+        if ($('.ejs--7a5f920ceffb2913f6dbda780573cf').length) {
+            $('#confirmation').closest('.reveal-overlay').appendTo('.ejs--7a5f920ceffb2913f6dbda780573cf');
+        }
+    });
+
+
+    EJS_onSaveState = function(data) {
+
+        // var state = jz.zlib.compress(new Uint8Array(fr.result));
+        var state = data.state;
+        var screenshot = data.screenshot;
+        // saveStateToLocal(screenshot, state);
+        // var f = new Blob([data.state], {type:"application/octet-stream"});
+        // var fr = new FileReader();
+        // fr.onload = function() {
+        //     var state = jz.zlib.compress(new Uint8Array(fr.result));
+        //     var screenshot = data.screenshot;
+        //     saveStateToLocal(screenshot, state);
+        // }
+        dialogModal.foundation('open');
+            dialogModal.find('h1.title').text('세이브 파일');
+            dialogModal.find('.content').html(
+
+                '<p><input id="state_saveto_file" checked type="radio" value="file" name="saveto" /><label class="customLabel" for="state_saveto_file"><span>파일로 저장</span></label></p>'+
+                (state.length < 2.5*1024*1024 ? '<p><input id="state_saveto_server" type="radio" value="server" name="saveto" /><label class="customLabel" for="state_saveto_server"><span>서버에 저장</span></label></p>' : '') +
+                '<p><input type="checkbox" id="check_remember_saveto" name="remember_saveto" value="1" /><label for="check_remember_saveto" class="customLabel">다시 묻지 않음</label></p>');
+            dialogModal.find('.actions .submit').one('click', function() {
+                var saveto = dialogModal.find('[name=saveto]:checked').val();
+                var remember = dialogModal.find('[name=remember_saveto]:checked').val();
+                if (remember == 1) {
+                    // localStorage.setItem('save_location', saveto);
+                    saveLocation = saveto;
+                }
+                if (saveto == 'file') {
+                    saveStateToLocal(screenshot, state);
                     saving = false;
-                    dialogModal.find('.actions .submit').off('click');
-                });
-            
-            
-        };
-        EJS_onLoadState = function(loadStateFn) {
-            loadModal.foundation('open');  
-        };
+                } else if (saveto == 'server') {
+                    saveStateToServer(screenshot, state);
+
+                }
+            });
+
+            dialogModal.on('closed.zf.reveal', function() {
+                saving = false;
+                dialogModal.find('.actions .submit').off('click');
+            });
+        
+        
+    };
+    EJS_onLoadState = function(loadStateFn) {
+        loadModal.foundation('open');  
+    };
     </script>
      <!-- <script src="https://rawcdn.githack.com/ethanaobrien/emulatorjs/main/data/loader.js"></script> -->
      <!-- <script src="//www.emulatorjs.com/loader.js" crossorigin></script> -->
     <script src="https://rawcdn.githack.com/tlqhrm/nds/8597767eec71a4e0fa73e3c96be48e78ca29a624/loader.js"></script>
 
-    
+    <!-- <div style="width:auto;height:100%;max-width:100%;margin:0 auto">
+        <div id="game">
+        <div style="text-align:center">
+        
+        <p style="margin-top: calc(50vh - 20px);font-size:30px">Loading...</p>
+        </div>
+        </div>
+        <div class="save-state-process" style="position: absolute !important;;display: none;">
+        <div class="circle">
+        <div class="percent left"></div>
+        <div class="percent right wth0"></div>
+        </div>
+        <div class="num"><span>0</span>%</div>
+        </div>
+        <div class="small reveal" id="loginModal" data-reveal>
+        <h1 class="title" style="font-size:24px">로그인</h1>
+        <div class="content">
+        <div class="login-form" style="display: block;border:none;width: 100%;position: static">
+        <form method="post" action="">
+        <div class="input-group">
+        <span class="input-group-label"><i class="fa fa-user"></i></span>
+        <input class="input-group-field" name="_username" type="text" placeholder="Enter username">
+        </div>
+        <div class="input-group">
+        <span class="input-group-label"><i class="fa fa-lock"></i></span>
+        <input class="input-group-field" name="_password" type="password" placeholder="Enter password">
+        </div>
+        <div class="checkbox">
+        <input id="check1" type="checkbox" name="_remember_me" value="1">
+        <label class="customLabel" for="check1">Remember me</label>
+        </div>
+        <input type="submit" name="submit" value="Login Now">
+        </form>
+        <p class="text-center">New here? <a target="_blank" class="newaccount" href="/register.html">Create a new Account</a></p>
+        <h5 class="text-center">OR</h5>
+        <div class="social-login" data-equalizer-watch="">
+        <div class="social-login-btn facebook" style="max-width: 250px;margin: 0 auto;">
+        <a href="#" class="fb-login"><i class="fa fa-facebook"></i>login via facebook</a>
+        </div>
+        </div>
+        </div>
+        </div>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span style="color: #000;font-size: 20px" aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="large reveal fill-height" id="loadStates" data-reveal>
+        <h1 class="title">세이브 불러오기</h1>
+        <ul class="tabs">
+        <li><a href="#" class="active">Upload</a></li>
+        <li><a href="#">From Server</a></li>
+        </ul>
+        <div class="tab-contents">
+        <div class="content active">
+        <div class="drag-drop-inside">
+        <p>Drop files here</p>
+        <p>or</p>
+        <p><input id="file-browse-button" type="button" value="Select Files" class="button tiny" style="position: relative; z-index: 1;"></p>
+        </div>
+        </div>
+        <div class="content">
+        </div>
+        </div>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span style="color: #fff;font-size: 20px" aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="tiny reveal without-overlay" id="dialogModal" data-reveal="fw4vpg-reveal" data-overlay="false" role="dialog" aria-hidden="true" data-yeti-box="dialogModal" data-resize="dialogModal">
+        <h1 class="title" style="font-size:18px"></h1>
+        <div class="content"></div>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span style="color: #fff;font-size: 20px" aria-hidden="true">&times;</span>
+        </button>
+         <div class="actions text-center">
+        <a class="button primary submit tiny" data-close tabindex="0">확인</a>
+        <a class="button tiny cancel" data-close tabindex="0">취소</a>
+        </div>
+        </div>
+        </div> -->
+
+        <div class="reveal-overlay" tabindex="-1" aria-hidden="true"><div class="small reveal" id="loginModal" data-reveal="7gssn0-reveal" role="dialog" aria-hidden="true" data-yeti-box="loginModal" data-resize="loginModal">
+            <h1 class="title" style="font-size:24px">Great to have you back!</h1>
+            <div class="content">
+            <div class="login-form" style="display: block;border:none;width: 100%;position: static">
+            <form method="post" action="https://www.retrogames.cc/embed/28096-dragon-ball-z-supersonic-warriors-k-projectg.html">
+            <div class="input-group">
+            <span class="input-group-label"><i class="fa fa-user"></i></span>
+            <input class="input-group-field" name="_username" type="text" placeholder="Enter username">
+            </div>
+            <div class="input-group">
+            <span class="input-group-label"><i class="fa fa-lock"></i></span>
+            <input class="input-group-field" name="_password" type="password" placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+            <input id="check1" type="checkbox" name="_remember_me" value="1">
+            <label class="customLabel" for="check1">Remember me</label>
+            </div>
+            <input type="submit" name="submit" value="Login Now">
+            </form>
+            <p class="text-center">New here? <a target="_blank" class="newaccount" href="https://www.retrogames.cc/register.html">Create a new Account</a></p>
+            <h5 class="text-center">OR</h5>
+            <div class="social-login" data-equalizer-watch="">
+            <div class="social-login-btn facebook" style="max-width: 250px;margin: 0 auto;">
+            <a href="https://www.retrogames.cc/embed/28096-dragon-ball-z-supersonic-warriors-k-projectg.html#" class="fb-login"><i class="fa fa-facebook"></i>login via facebook</a>
+            </div>
+            </div>
+            </div>
+            </div>
+            <button class="close-button" data-close="" aria-label="Close modal" type="button">
+            <span style="color: #000;font-size: 20px" aria-hidden="true">×</span>
+            </button>
+            </div></div><div class="reveal-overlay" tabindex="-1" aria-hidden="true"><div class="large reveal fill-height" id="loadStates" data-reveal="9ktrwi-reveal" role="dialog" aria-hidden="true" data-yeti-box="loadStates" data-resize="loadStates">
+            <h1 class="title">Load Game</h1>
+            <ul class="tabs">
+            <li><a href="https://www.retrogames.cc/embed/28096-dragon-ball-z-supersonic-warriors-k-projectg.html#" class="active">Upload</a></li>
+            <li><a href="https://www.retrogames.cc/embed/28096-dragon-ball-z-supersonic-warriors-k-projectg.html#">From Server</a></li>
+            </ul>
+            <div class="tab-contents">
+            <div class="content active">
+            <div class="drag-drop-inside">
+            <p>Drop files here</p>
+            <p>or</p>
+            <p><input id="file-browse-button" type="button" value="Select Files" class="button tiny" style="position: relative; z-index: 1;"></p>
+            </div>
+            </div>
+            <div class="content">
+            </div>
+            </div>
+            <button class="close-button" data-close="" aria-label="Close modal" type="button">
+            <span style="color: #fff;font-size: 20px" aria-hidden="true">×</span>
+            </button>
+            </div></div><div class="tiny reveal without-overlay" id="dialogModal" data-reveal="fw4vpg-reveal" data-overlay="false" role="dialog" aria-hidden="true" data-yeti-box="dialogModal" data-resize="dialogModal">
+            <h1 class="title" style="font-size:18px"></h1>
+            <div class="content"></div>
+            <button class="close-button" data-close="" aria-label="Close modal" type="button">
+            <span style="color: #fff;font-size: 20px" aria-hidden="true">×</span>
+            </button>
+            <div class="actions text-center">
+            <a class="button primary submit tiny" data-close="" tabindex="0">Yes</a>
+            <a class="button tiny cancel" data-close="" tabindex="0">No</a>
+            </div>
+            </div>
 </body>
 </html>
